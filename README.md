@@ -1,21 +1,9 @@
 # RNAppStarter
 This is a starter app for React Native with some boilerplate code :p
-- Redux integration
-- Redux Saga Integration
-- Folder structure
-
-  |--src
-  |----actions
-  |----api
-  |----reducers
-  |----sagas
-  |----store
-  |----app.js
-  |----main.js
-  |-index.js
-  |-app.json
-  |-package.json
-
+- Redux integration (You can add actions, reducers straigt away!)
+- Redux Saga Integration (You can add new saga straight away!)
+- Redux Persist (Just add new reducer to the persist folder & it will automatically rehydrate that reducer)
+- Redux Logger (See you action and states for every action dispatched!)
 - Packages included:
 ```
   "axios": "^0.17.1",
@@ -32,18 +20,22 @@ This is a starter app for React Native with some boilerplate code :p
   "redux-saga": "^0.16.0"
 ```
 
+## Yo
+![Demo](https://preview.ibb.co/mXKS4b/Screen_Shot_2017_12_12_at_1_07_11_PM.png)
+
 ## Clone
 ```
 git clone https://github.com/kyaroru/RNAppStarter
 cd RNAppStarter
 npm install
-react-native link (important! to link the packages)
 ```
 
 ## Start
 ```
-react-native run-android
-react-native run-ios
+npm start
+ios > open RNAppStarter.xcodeproj
+android > open Android Studio
+run
 ```
 
 ---
