@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import auth from './auth';
 import persist from './persist';
 
-export default combineReducers({
+export default {
   AUTH: auth,
   PERSIST: persist,
-});
+};

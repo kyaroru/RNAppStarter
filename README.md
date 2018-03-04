@@ -12,16 +12,16 @@ This is a starter app for React Native with some boilerplate code :p
   "react-native": "0.51.0",
   "react-native-config": "^0.6.0",
   "react-native-vector-icons": "^4.4.2",
-  "react-navigation": "^1.0.0-beta.21",
+  "react-navigation": "1.0.0-beta.27",
   "react-redux": "^5.0.6",
   "redux": "^3.7.2",
   "redux-logger": "^3.0.6",
-  "redux-persist": "^4.10.1",
+  "redux-persist": "^5.9,0",
   "redux-saga": "^0.16.0"
 ```
 
 ## Yo
-![Demo](https://preview.ibb.co/mXKS4b/Screen_Shot_2017_12_12_at_1_07_11_PM.png)
+![Demo](http://g.recordit.co/2P4aeACaFQ.gif)
 
 ## Clone
 ```
