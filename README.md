@@ -6,18 +6,19 @@ This is a starter app for React Native with some boilerplate code :p
 - Redux Logger (See you action and states for every action dispatched!)
 - Packages included:
 ```
-  "axios": "^0.17.1",
-  "qs": "^6.5.1",
-  "react": "16.0.0",
-  "react-native": "0.51.0",
-  "react-native-config": "^0.6.0",
-  "react-native-vector-icons": "^4.4.2",
-  "react-navigation": "1.0.0-beta.27",
-  "react-redux": "^5.0.6",
-  "redux": "^3.7.2",
-  "redux-logger": "^3.0.6",
-  "redux-persist": "^5.9,0",
-  "redux-saga": "^0.16.0"
+    "axios": "^0.17.1",
+    "qs": "^6.5.2",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-config": "^0.6.0",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.6.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.4.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^0.16.0"
 ```
 
 ## Yo
@@ -60,21 +61,6 @@ react-native link
 ```
 
 ### For Android (Additional Setup only if rename the app)
-- Copy the following to android/build.gradle (without /app)
-- This is to solve sdk version mismatch issue
-```
-subprojects {
-    afterEvaluate {project ->
-        if (project.hasProperty("android")) {
-            android {
-                compileSdkVersion 23
-                buildToolsVersion '23.0.1'
-            }
-        }
-    }
-}
-```
-
 - Copy the following to android/app/build.gradle (with /app).
 - Put it after `apply plugin: "com.android.application"`
 - This is to cater for different environments
@@ -86,6 +72,13 @@ project.ext.envConfigFiles = [
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
+- Open 'react-native-config/android/build.gradle'
+- Change to the following version (because original is too low to support latest RN)
+```
+    compileSdkVersion 26
+    buildToolsVersion '26.0.3'
 ```
 
 ### For iOS (Additional Setup only if rename the app)

@@ -25,16 +25,10 @@ export const configureInterceptor = () => {
     return defaultConfig;
   }, error => Promise.reject(error));
 
-  axios.interceptors.response.use((response) => {
-    const store = getStore();
-    store.dispatch({ type: Actions.SET_NETWORK_ERROR, isError: false });
-    return response;
-  }, (error) => {
+  axios.interceptors.response.use(response => response, (error) => {
     if (error.response) {
       return Promise.reject(error.response);
     }
-    const store = getStore();
-    store.dispatch({ type: Actions.ATTEMPT_SET_NETWORK_ERROR });
     return Promise.reject('Please check your internet connection or try again later');
   });
 };
