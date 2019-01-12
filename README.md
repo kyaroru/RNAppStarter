@@ -6,19 +6,20 @@ This is a starter app for React Native with some boilerplate code :p
 - Redux Logger (See you action and states for every action dispatched!)
 - Packages included:
 ```
-    "axios": "^0.17.1",
-    "qs": "^6.5.2",
-    "react": "16.4.1",
-    "react-native": "0.56.0",
-    "react-native-config": "^0.6.0",
-    "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^2.6.2",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-form": "^7.4.2",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
+    "qs": "^6.6.0",
+    "react": "16.6.3",
+    "react-native": "0.57.8",
+    "react-native-config": "^0.11.7",
+    "react-native-vector-icons": "^6.1.0",
+    "react-navigation": "^3.0.9",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.2"
 ```
 
 ## Yo
@@ -74,11 +75,17 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
-- Open 'react-native-config/android/build.gradle'
-- Change to the following version (because original is too low to support latest RN)
+- Open 'android/app/build.gradle'
+- Change all `compile` to `implementation` (compile is deprecated :p)
 ```
-    compileSdkVersion 26
-    buildToolsVersion '26.0.3'
+dependencies {
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-config')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+}
 ```
 
 ### For iOS (Additional Setup only if rename the app)
@@ -93,6 +100,7 @@ echo "./environments/.env.development" > /tmp/envfile
 - Rename the new scheme name to 'App Name (Production)'
 - Edit Scheme for the production
 - Build > Pre-Action > Add New Run Script Action
+- Press Manage Schemes > Tick "Shared" for your new scheme (else it will be ignored by Git)
 ```
 echo "./environments/.env.production" > /tmp/envfile
 ```
