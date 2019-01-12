@@ -3,6 +3,7 @@ This is a starter app for React Native with some boilerplate code :p
 - Redux integration (You can add actions, reducers straigt away!)
 - Redux Saga Integration (You can add new saga straight away!)
 - Redux Persist (Just add new reducer to the persist folder & it will automatically rehydrate that reducer)
+- React Navigation (Contains basic auth logic for navigation between screen)
 - Redux Logger (See you action and states for every action dispatched!)
 - Packages included:
 ```
@@ -22,8 +23,8 @@ This is a starter app for React Native with some boilerplate code :p
     "redux-saga": "^0.16.2"
 ```
 
-## Yo
-![Demo](http://g.recordit.co/2P4aeACaFQ.gif)
+## Yo, Demo
+![Demo](http://g.recordit.co/8wer2dU89N.gif)
 
 ## Clone
 ```
@@ -72,7 +73,6 @@ project.ext.envConfigFiles = [
 ]
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 - Open 'android/app/build.gradle'

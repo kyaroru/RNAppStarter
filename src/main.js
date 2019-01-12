@@ -4,10 +4,17 @@ import configureStore from 'store/configureStore';
 import App from './app';
 
 class Main extends Component {
+  componentWillMount() {
+    const onComplete = () => {
+      console.log('[Rehydrate] Complete');
+    };
+    const { store } = configureStore(onComplete);
+    this.store = store;
+  }
+
   render() {
-    const { store } = configureStore();
     return (
-      <Provider store={store}>
+      <Provider store={this.store}>
         <App />
       </Provider>
     );

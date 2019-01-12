@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 import reducers from 'reducers';
 import sagas from 'sagas';
+// import { configureInterceptor } from 'api/helper'; // uncomment when api is integrated
 
 let middlewares;
 let store;
@@ -32,10 +33,11 @@ if (__DEV__) {
 
 export const getStore = () => store;
 
-const configureStore = () => {
+const configureStore = (onComplete) => {
   store = createStore(reducer, middlewares);
+  // configureInterceptor(); // uncomment when API is integrated
   sagaMiddleware.run(sagas);
-  const persistor = persistStore(store);
+  const persistor = persistStore(store, null, onComplete);
   return { persistor, store };
 };
 
