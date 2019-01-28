@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from 'react-native';
+import * as Colors from 'themes/colors';
 import Actions from 'actions';
 
 class Auth extends Component {
@@ -27,13 +28,13 @@ class Auth extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1E90FF',
+    backgroundColor: Colors.primary,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: 'white',
+    color: Colors.white,
   },
 });
 

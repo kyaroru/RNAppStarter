@@ -9,6 +9,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import * as Colors from 'themes/colors';
+import { normalize } from 'utils/size';
 import CONFIG from 'react-native-config';
 
 class Dashboard extends Component {
@@ -30,31 +32,24 @@ class Dashboard extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1E90FF',
+    backgroundColor: Colors.primary,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: 'white',
-  },
-  button: {
-    margin: 10,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 5,
+    color: Colors.white,
   },
   buttonSignOut: {
-    margin: 10,
-    padding: 10,
+    margin: normalize(10),
+    padding: normalize(10),
     borderWidth: 1,
-    borderColor: 'white',
-    backgroundColor: 'white',
-    borderRadius: 5,
+    borderColor: Colors.white,
+    backgroundColor: Colors.white,
+    borderRadius: normalize(5),
   },
   buttonSignOutText: {
-    color: '#1E90FF',
+    color: Colors.primary,
   },
 });
 

@@ -1,7 +1,7 @@
 import CONFIG from 'react-native-config';
 import _ from 'lodash';
 import axios from 'axios';
-import Actions from 'actions';
+import Selectors from 'selectors';
 import { getStore } from 'store/configureStore';
 import { getWhitelistURL } from './whitelistUrl';
 
@@ -16,7 +16,7 @@ export const configureInterceptor = () => {
     const defaultConfig = config;
     const store = getStore();
     const state = store.getState();
-    const token = Actions.getToken(state);
+    const token = Selectors.getToken(state);
     const whitelistUrl = getWhitelistURL();
     if (token !== null && !_.includes(whitelistUrl, config.url)) {
       defaultConfig.headers.Authorization = `Bearer ${token}`;

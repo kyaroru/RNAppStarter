@@ -10,6 +10,8 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
+import * as Colors from 'themes/colors';
+import { normalize } from 'utils/size';
 import CONFIG from 'react-native-config';
 
 class Auth extends Component {
@@ -32,31 +34,20 @@ class Auth extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1E90FF',
+    backgroundColor: Colors.primary,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: 'white',
+    color: Colors.white,
   },
   button: {
-    margin: 10,
-    padding: 10,
+    margin: normalize(10),
+    padding: normalize(10),
     borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 5,
-  },
-  buttonSignOut: {
-    margin: 10,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: 'white',
-    backgroundColor: 'white',
-    borderRadius: 5,
-  },
-  buttonSignOutText: {
-    color: '#1E90FF',
+    borderColor: Colors.white,
+    borderRadius: normalize(5),
   },
 });
 

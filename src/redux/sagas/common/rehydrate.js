@@ -3,7 +3,7 @@ import {
 } from 'redux-saga/effects';
 import Actions from 'actions';
 import Selectors from 'selectors';
-import AppNavigationService from 'navigator/AppNavigationService';
+import AppNavigationService from 'navigator/app/AppNavigationService';
 
 function* rehydrate() {
   yield put(Actions.finishRehydrate());

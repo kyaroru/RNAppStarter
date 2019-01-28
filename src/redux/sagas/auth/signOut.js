@@ -2,7 +2,7 @@ import {
   takeLatest, all, fork, call,
 } from 'redux-saga/effects';
 import Actions from 'actions';
-import AppNavigationService from 'navigator/AppNavigationService';
+import AppNavigationService from 'navigator/app/AppNavigationService';
 
 function* signOut() {
   yield call(AppNavigationService.navigate, 'Auth');

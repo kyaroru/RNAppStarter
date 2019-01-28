@@ -3,6 +3,7 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
+    "react-native",
     "flowtype"
   ],
   "rules": {
@@ -24,7 +25,7 @@
       ]
     }],
     "react/prefer-stateless-function": "off",
-    "no-use-before-define": "off",
+    "no-use-before-define": ["error", { "variables": false }],
     "no-param-reassign": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": "off",
@@ -34,8 +35,15 @@
     "import/extensions": "off",
     "import/export": "off",
     "import/prefer-default-export": "off",
-    "no-undef": "off",
+    "no-undef": "error",
     "no-nested-ternary": "off",
-    "prefer-promise-reject-errors": "off"
+    "linebreak-style": 0,
+    "no-restricted-globals": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-floating-decimal": 1,
+    "no-else-return": 1,
+    "react-native/no-unused-styles": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 1
   }
 }

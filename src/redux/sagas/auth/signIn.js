@@ -3,7 +3,7 @@ import {
 } from 'redux-saga/effects';
 import Actions from 'actions';
 import * as api from 'api';
-import AppNavigationService from 'navigator/AppNavigationService';
+import AppNavigationService from 'navigator/app/AppNavigationService';
 
 function* signIn({ credentials }) {
   try {

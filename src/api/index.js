@@ -5,7 +5,7 @@
 //   api.post('api/Login', data);
 
 // Mock api here, remove it in actual usage
-export const signIn = credentials => new Promise((resolve) => {
+export const signIn = credentials => new Promise((resolve, reject) => {
   if (credentials.username === 'test' && credentials.password === '1234') {
     // mocking api request
     setTimeout(() => {

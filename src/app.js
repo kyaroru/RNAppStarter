@@ -1,13 +1,8 @@
 import React from 'react';
-import AppNavigator from 'navigator/AppNavigator';
-import AppNavigationService from 'navigator/AppNavigationService';
+import AppNavigator from 'navigator/app';
 
 const App = () => (
-  <AppNavigator
-    ref={(navigatorRef) => {
-      AppNavigationService.setTopLevelNavigator(navigatorRef);
-    }}
-  />
+  <AppNavigator />
 );
 
 export default App;

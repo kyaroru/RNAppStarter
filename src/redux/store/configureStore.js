@@ -2,6 +2,7 @@ import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import reducers from 'reducers';
 import sagas from 'sagas';
@@ -26,7 +27,7 @@ if (__DEV__) {
     collapsed: true,
     predicate: (getState, action) => excludedActions.indexOf(action.type) < 0,
   });
-  middlewares = applyMiddleware(sagaMiddleware, logger);
+  middlewares = composeWithDevTools(applyMiddleware(sagaMiddleware, logger));
 } else {
   middlewares = applyMiddleware(sagaMiddleware);
 }
